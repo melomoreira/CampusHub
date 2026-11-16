@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="844.0" prefWidth="390.0" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaCadastroController">
+
+    <center>
+        <VBox alignment="CENTER" maxWidth="320.0" spacing="15.0">
+
+            <padding>
+                <Insets bottom="25.0" left="30.0" right="30.0" top="15.0" />
+            </padding>
+         <ImageView fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../imagens/CampusHub_Logo+Nome.png"/>
+            </image>
+         </ImageView>
+
+            <VBox spacing="5.0">
+                <Label style="-fx-font-size: 25px;                               -fx-font-weight: bold;                               -fx-text-fill: #243B64;" text="Crie sua conta!" />
+
+                <Label style="-fx-font-size: 12px;                               -fx-text-fill: #667085;" text="Conecte-se à sua comunidade acadêmica." wrapText="true" />
+            </VBox>
+
+            <VBox spacing="6.0">
+                <Label style="-fx-text-fill: #243B64;                               -fx-font-weight: bold;" text="Nome completo" />
+                <TextField fx:id="campoNome" prefHeight="42.0" promptText="Seu nome" />
+            </VBox>
+
+            <VBox spacing="6.0">
+                <Label style="-fx-text-fill: #243B64;                               -fx-font-weight: bold;" text="E-mail" />
+                <TextField fx:id="campoEmail" prefHeight="42.0" promptText="seuemail@universidade.com" />
+            </VBox>
+
+            <VBox spacing="6.0">
+                <Label style="-fx-text-fill: #243B64;                               -fx-font-weight: bold;" text="Senha" />
+                <PasswordField fx:id="campoSenha" prefHeight="42.0" promptText="Crie uma senha" />
+            </VBox>
+
+            <VBox spacing="6.0">
+                <Label style="-fx-text-fill: #243B64;                               -fx-font-weight: bold;" text="Universidade" />
+                <TextField fx:id="campoUniversidade" prefHeight="42.0" promptText="Ex.: UFG" />
+            </VBox>
+
+            <VBox spacing="6.0">
+                <Label style="-fx-text-fill: #243B64;                               -fx-font-weight: bold;" text="Curso" />
+                <TextField fx:id="campoCurso" prefHeight="42.0" promptText="Ex.: Engenharia de Computação" />
+            </VBox>
+
+            <Label fx:id="mensagemErro" style="-fx-text-fill: #D64545;                           -fx-font-size: 12px;" text="" wrapText="true" />
+
+            <Button maxWidth="Infinity" onAction="#realizarCadastro" prefHeight="46.0" style="-fx-background-color: #243B64;                            -fx-text-fill: white;                            -fx-font-size: 15px;                            -fx-font-weight: bold;                            -fx-background-radius: 8px;                            -fx-cursor: hand;" text="Criar conta" />
+
+            <HBox alignment="CENTER" spacing="5.0">
+                <Label style="-fx-text-fill: #667085;                               -fx-font-size: 12px;" text="Já possui uma conta?" />
+
+                <Hyperlink onAction="#voltarLogin" style="-fx-text-fill: #426A9E;                                   -fx-font-weight: bold;" text="Fazer login" />
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

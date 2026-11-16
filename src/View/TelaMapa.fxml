@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.TelaMapaController"
+            prefWidth="390.0"
+            prefHeight="844.0"
+            style="-fx-background-color: #F4F6FA;">
+
+    <top>
+        <VBox spacing="6.0"
+              style="-fx-padding: 18 16 14 16;
+                     -fx-background-color: white;">
+            <Label text="Explorar campus"
+                   style="-fx-font-size: 22px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #243B64;"/>
+
+		<Button text="← Voltar ao início"
+        onAction="#voltarInicio"
+        style="-fx-background-color: transparent;
+               -fx-text-fill: #426A9E;
+               -fx-font-size: 13px;
+               -fx-font-weight: bold;
+               -fx-cursor: hand;"/>
+
+            <Label fx:id="labelProgresso"
+                   text="Missões concluídas: 0 | Pontos: 0"
+                   style="-fx-font-size: 13px;
+                          -fx-text-fill: #426A9E;"/>
+
+            <Label fx:id="labelStatus"
+                   text="Toque em um marcador para descobrir uma missão."
+                   wrapText="true"
+                   style="-fx-font-size: 12px;
+                          -fx-text-fill: #555555;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="false"
+                    fitToHeight="false"
+                    pannable="true"
+                    hbarPolicy="AS_NEEDED"
+                    vbarPolicy="AS_NEEDED"
+                    style="-fx-background: #F4F6FA;
+                           -fx-background-color: #F4F6FA;">
+
+            <content>
+                <StackPane fx:id="areaMapa"
+                           alignment="TOP_LEFT">
+
+                    <ImageView fx:id="imagemMapa"
+                               preserveRatio="true"
+                               smooth="true"/>
+
+                    <Pane fx:id="camadaMarcadores"
+                          mouseTransparent="false"
+                          pickOnBounds="false"/>
+
+                </StackPane>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

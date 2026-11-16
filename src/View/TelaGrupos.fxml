@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane
+    prefHeight="844.0"
+    prefWidth="390.0"
+    minHeight="600.0"
+    minWidth="320.0"
+    style="-fx-background-color: #F4F6FA;"
+    xmlns="http://javafx.com/javafx/23"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="Controller.TelaGruposController">
+
+    <!-- CABEÇALHO -->
+    <top>
+        <VBox
+            spacing="10.0"
+            style="-fx-background-color: #F4F6FA;">
+
+            <padding>
+                <Insets
+                    top="10.0"
+                    right="10.0"
+                    bottom="15.0"
+                    left="10.0"/>
+            </padding>
+
+            <children>
+
+                <!-- LOGO -->
+
+                <HBox alignment="CENTER_LEFT"
+      prefHeight="70.0"
+      spacing="10.0">
+
+    <children>
+        <Label prefWidth="300.0"
+               style="-fx-font-size: 22px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #243B64;"
+               text="CAMPUS HUB"/>
+
+        <ImageView fitHeight="70.0"
+                   fitWidth="70.0"
+                   preserveRatio="true"
+                   pickOnBounds="true">
+            <image>
+                <Image url="@../imagens/CampusHub_Logo.png"/>
+            </image>
+            <HBox.margin>
+                <Insets right="10.0"/>
+            </HBox.margin>
+        </ImageView>
+    </children>
+</HBox>
+
+                <!-- TÍTULO -->
+                <Label
+                    text="Grupos"
+                    style="-fx-font-size: 24px;
+                           -fx-font-weight: bold;
+                           -fx-text-fill: #243B64;"/>
+
+                <Label
+                    text="Encontre pessoas que compartilham seus interesses."
+                    wrapText="true"
+                    style="-fx-font-size: 13px;
+                           -fx-text-fill: #667085;"/>
+
+                <!-- PESQUISA -->
+                <TextField
+                    fx:id="campoBusca"
+                    onAction="#pesquisarGrupos"
+                    prefHeight="42.0"
+                    maxWidth="Infinity"
+                    promptText="Pesquisar grupos..."
+                    style="-fx-background-radius: 10px;
+                           -fx-border-radius: 10px;
+                           -fx-border-color: #D5DDE9;
+                           -fx-background-color: white;"/>
+
+            </children>
+        </VBox>
+    </top>
+
+    <!-- CONTEÚDO CENTRAL -->
+
+    <center>
+    <ScrollPane fitToWidth="true"
+                hbarPolicy="NEVER"
+                style="-fx-background-color: #F4F6FA;
+                       -fx-background: #F4F6FA;">
+
+        <content>
+            <VBox fx:id="listaGrupos"
+                  spacing="15.0"
+                  fillWidth="true"
+                  style="-fx-background-color: #F4F6FA;">
+
+                <padding>
+                    <Insets top="15.0"
+                            right="18.0"
+                            bottom="20.0"
+                            left="18.0"/>
+                </padding>
+
+                <children>
+
+                    <Label text="Explore comunidades"
+                           wrapText="true"
+                           style="-fx-font-size: 18px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #243B64;"/>
+
+                    <Button text="+ Criar grupo"
+                            onAction="#abrirFormularioGrupo"
+                            maxWidth="Infinity"
+                            prefHeight="42.0"
+                            style="-fx-background-color: #426A9E;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;
+                                   -fx-background-radius: 8px;
+                                   -fx-cursor: hand;"/>
+
+                    <VBox fx:id="conteudoGrupos"
+                          spacing="12.0"
+                          fillWidth="true"
+                          maxWidth="Infinity"/>
+
+                    <Label fx:id="mensagemSemResultados"
+                           text="Nenhum grupo encontrado."
+                           visible="false"
+                           managed="false"
+                           wrapText="true"
+                           style="-fx-text-fill: #667085;
+                                  -fx-font-size: 13px;"/>
+
+                </children>
+            </VBox>
+        </content>
+    </ScrollPane>
+</center>
+
+    <!-- NAVEGAÇÃO INFERIOR -->
+    
+<bottom>
+    <HBox alignment="CENTER"
+          minHeight="100.0"
+          minWidth="390.0"
+          prefHeight="100.0"
+          prefWidth="390.0"
+          spacing="20.0"
+          style="-fx-background-color: white;
+                 -fx-border-width: 1px;
+                 -fx-background-radius: 12px;"
+          BorderPane.alignment="CENTER">
+
+        <children>
+
+            <!-- INÍCIO -->
+            <VBox fx:id="navInicio"
+                  alignment="CENTER"
+                  onMouseClicked="#abrirInicio"
+                  prefHeight="55.0"
+                  prefWidth="75.0"
+                  spacing="5.0">
+
+                <children>
+                    <Label text="🏠 Início"
+                           style="-fx-font-size: 12px;
+                                  -fx-text-fill: #667085;"/>
+                </children>
+
+                <padding>
+                    <Insets bottom="35.0"/>
+                </padding>
+            </VBox>
+
+            <!-- EVENTOS -->
+            <VBox fx:id="navEventos"
+                  alignment="CENTER"
+                  onMouseClicked="#abrirEventos"
+                  prefHeight="55.0"
+                  prefWidth="75.0"
+                  spacing="5.0">
+
+                <children>
+                    <Label text="📅 Eventos"
+                           style="-fx-font-size: 12px;
+                                  -fx-text-fill: #667085;"/>
+                </children>
+
+                <padding>
+                    <Insets bottom="35.0"/>
+                </padding>
+            </VBox>
+
+            <!-- GRUPOS -->
+            <VBox fx:id="navGrupos"
+                  alignment="CENTER"
+                  onMouseClicked="#abrirGrupos"
+                  prefHeight="55.0"
+                  prefWidth="75.0"
+                  spacing="5.0">
+
+                <children>
+                    <Label text="👥 Grupos"
+                           style="-fx-font-size: 12px;
+                                  -fx-text-fill: #243B64;
+                                  -fx-font-weight: bold;"/>
+                </children>
+
+                <padding>
+                    <Insets bottom="35.0"/>
+                </padding>
+            </VBox>
+
+            <!-- PERFIL -->
+            <VBox fx:id="navPerfil"
+                  alignment="CENTER"
+                  onMouseClicked="#abrirPerfil"
+                  prefHeight="55.0"
+                  prefWidth="75.0"
+                  spacing="5.0">
+
+                <children>
+                    <Label text="👤 Perfil"
+                           style="-fx-font-size: 12px;
+                                  -fx-text-fill: #667085;"/>
+                </children>
+
+                <padding>
+                    <Insets bottom="35.0"/>
+                </padding>
+            </VBox>
+
+        </children>
+    </HBox>
+</bottom>
+
+</BorderPane>

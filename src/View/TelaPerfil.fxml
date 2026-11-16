@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="844.0"
+            prefWidth="390.0"
+            xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.TelaPerfilController">
+
+    <top>
+        <VBox spacing="12.0"
+              style="-fx-background-color: #F4F6FA;">
+
+            <padding>
+                <Insets top="10.0" right="10.0"
+                        bottom="15.0" left="10.0"/>
+            </padding>
+
+            <children>
+                <HBox alignment="CENTER_LEFT"
+                      prefHeight="70.0"
+                      spacing="10.0">
+
+                    <children>
+                        <Label prefWidth="300.0"
+                               style="-fx-font-size: 22px;
+                                      -fx-font-weight: bold;
+                                      -fx-text-fill: #243B64;"
+                               text="CAMPUS HUB"/>
+
+                        <ImageView fitHeight="70.0"
+                                   fitWidth="70.0"
+                                   preserveRatio="true"
+                                   pickOnBounds="true">
+                            <image>
+                                <Image url="@../imagens/CampusHub_Logo.png"/>
+                            </image>
+                            <HBox.margin>
+                                <Insets right="10.0"/>
+                            </HBox.margin>
+                        </ImageView>
+                    </children>
+                </HBox>
+
+                <Label style="-fx-font-size: 24px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: #243B64;"
+                       text="Meu perfil"/>
+
+                <Label style="-fx-font-size: 13px;
+                              -fx-text-fill: #667085;"
+                       text="Gerencie suas informações pessoais."/>
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true"
+                    hbarPolicy="NEVER"
+                    style="-fx-background-color: #F4F6FA;
+                           -fx-background: #F4F6FA;">
+
+            <content>
+                <VBox spacing="14.0"
+                      style="-fx-background-color: #F4F6FA;">
+
+                    <padding>
+                        <Insets top="15.0" right="18.0"
+                                bottom="20.0" left="18.0"/>
+                    </padding>
+
+                    <children>
+                        
+<VBox alignment="CENTER"
+      spacing="8.0"
+      style="-fx-background-color: white;
+             -fx-background-radius: 15px;
+             -fx-padding: 18px;">
+
+    <children>
+        <ImageView fx:id="imagemPerfil"
+                   fitWidth="110.0"
+                   fitHeight="110.0"
+                   preserveRatio="false"
+                   smooth="true"/>
+
+        <Label fx:id="placeholderFoto"
+               text="👤"
+               style="-fx-font-size: 55px;"/>
+
+        <Button text="Alterar foto"
+                onAction="#selecionarFoto"
+                prefHeight="35.0"
+                style="-fx-background-color: #E5EBF4;
+                       -fx-text-fill: #243B64;
+                       -fx-font-weight: bold;
+                       -fx-background-radius: 8px;
+                       -fx-cursor: hand;"/>
+
+        <Label text="Suas informações"
+               style="-fx-font-size: 17px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #243B64;"/>
+
+        <Label text="Mantenha seu perfil atualizado."
+               style="-fx-font-size: 12px;
+                      -fx-text-fill: #667085;"/>
+    </children>
+</VBox>
+
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="Nome completo"
+                                       style="-fx-font-size: 13px;
+                                              -fx-font-weight: bold;
+                                              -fx-text-fill: #243B64;"/>
+
+                                <TextField fx:id="campoNome"
+                                           promptText="Digite seu nome"
+                                           prefHeight="40.0"
+                                           style="-fx-background-radius: 8px;"/>
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="E-mail"
+                                       style="-fx-font-size: 13px;
+                                              -fx-font-weight: bold;
+                                              -fx-text-fill: #243B64;"/>
+
+                                <TextField fx:id="campoEmail"
+                                           promptText="Digite seu e-mail"
+                                           prefHeight="40.0"
+                                           style="-fx-background-radius: 8px;"/>
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="Universidade"
+                                       style="-fx-font-size: 13px;
+                                              -fx-font-weight: bold;
+                                              -fx-text-fill: #243B64;"/>
+
+                                <TextField fx:id="campoUniversidade"
+                                           promptText="Sua universidade"
+                                           prefHeight="40.0"
+                                           style="-fx-background-radius: 8px;"/>
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="Curso"
+                                       style="-fx-font-size: 13px;
+                                              -fx-font-weight: bold;
+                                              -fx-text-fill: #243B64;"/>
+
+                                <TextField fx:id="campoCurso"
+                                           promptText="Seu curso"
+                                           prefHeight="40.0"
+                                           style="-fx-background-radius: 8px;"/>
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="Interesses"
+                                       style="-fx-font-size: 13px;
+                                              -fx-font-weight: bold;
+                                              -fx-text-fill: #243B64;"/>
+
+                                <TextArea fx:id="campoInteresses"
+                                          promptText="Ex.: tecnologia, música, esportes"
+                                          prefRowCount="3"
+                                          wrapText="true"
+                                          style="-fx-background-radius: 8px;"/>
+                            </children>
+                        </VBox>
+
+                        <Label fx:id="mensagem"
+                               wrapText="true"
+                               style="-fx-font-size: 12px;
+                                      -fx-text-fill: #243B64;"/>
+
+                        <Button text="Salvar alterações"
+                                onAction="#salvarAlteracoes"
+                                maxWidth="Infinity"
+                                prefHeight="45.0"
+                                style="-fx-background-color: #243B64;
+                                       -fx-text-fill: white;
+                                       -fx-font-size: 14px;
+                                       -fx-font-weight: bold;
+                                       -fx-background-radius: 10px;
+                                       -fx-cursor: hand;"/>
+
+                        <Button text="Sair da conta"
+                                onAction="#sairDaConta"
+                                maxWidth="Infinity"
+                                prefHeight="42.0"
+                                style="-fx-background-color: #E5EBF4;
+                                       -fx-text-fill: #243B64;
+                                       -fx-font-size: 13px;
+                                       -fx-font-weight: bold;
+                                       -fx-background-radius: 10px;
+                                       -fx-cursor: hand;"/>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER"
+              minHeight="100.0"
+              prefHeight="100.0"
+              prefWidth="390.0"
+              spacing="20.0"
+              style="-fx-background-color: white;
+                     -fx-border-width: 1px;
+                     -fx-background-radius: 12px;">
+
+            <children>
+                <VBox fx:id="navInicio"
+                      alignment="CENTER"
+                      onMouseClicked="#abrirInicio"
+                      prefWidth="75.0"
+                      spacing="5.0">
+                    <children>
+                        <Label text="🏠 Início"
+                               style="-fx-font-size: 12px;
+                                      -fx-text-fill: #667085;"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="35.0"/>
+                    </padding>
+                </VBox>
+
+                <VBox fx:id="navEventos"
+                      alignment="CENTER"
+                      onMouseClicked="#abrirEventos"
+                      prefWidth="75.0"
+                      spacing="5.0">
+                    <children>
+                        <Label text="📅 Eventos"
+                               style="-fx-font-size: 12px;
+                                      -fx-text-fill: #667085;"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="35.0"/>
+                    </padding>
+                </VBox>
+
+                <VBox fx:id="navGrupos"
+                      alignment="CENTER"
+                      onMouseClicked="#abrirGrupos"
+                      prefWidth="75.0"
+                      spacing="5.0">
+                    <children>
+                        <Label text="👥 Grupos"
+                               style="-fx-font-size: 12px;
+                                      -fx-text-fill: #667085;"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="35.0"/>
+                    </padding>
+                </VBox>
+
+                <VBox fx:id="navPerfil"
+                      alignment="CENTER"
+                      onMouseClicked="#abrirPerfil"
+                      prefWidth="75.0"
+                      spacing="5.0">
+                    <children>
+                        <Label text="👤 Perfil"
+                               style="-fx-font-size: 12px;
+                                      -fx-font-weight: bold;
+                                      -fx-text-fill: #243B64;"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="35.0"/>
+                    </padding>
+                </VBox>
+            </children>
+        </HBox>
+    </bottom>
+
+</BorderPane>

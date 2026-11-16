@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="844.0" prefWidth="390.0" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaEventosController">
+
+    <!-- CABEÇALHO -->
+    <top>
+        <VBox spacing="10.0" style="-fx-background-color: #F4F6FA;" BorderPane.alignment="CENTER">
+
+            <padding>
+                <Insets bottom="15.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+
+            <children>
+
+                <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="10.0">
+
+                    <children>
+
+                        <Label prefWidth="300.0" style="-fx-font-size: 22px;                                       -fx-font-weight: bold;                                       -fx-text-fill: #243B64;" text="CAMPUS HUB" />
+
+                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagens/CampusHub_Logo.png"/>
+                            </image>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </ImageView>
+
+                    </children>
+                </HBox>
+
+                <Label style="-fx-font-size: 24px;                               -fx-font-weight: bold;                               -fx-text-fill: #243B64;" text="Eventos" />
+
+                <Label style="-fx-font-size: 13px;                               -fx-text-fill: #667085;" text="Descubra o que acontece na sua universidade." wrapText="true" />
+
+            </children>
+        </VBox>
+    </top>
+
+    <!-- CONTEÚDO CENTRAL -->
+    <center>
+    <ScrollPane fitToWidth="true"
+                hbarPolicy="NEVER"
+                style="-fx-background-color: transparent;
+                       -fx-background: #F4F6FA;
+                       -fx-border-color: transparent;"
+                BorderPane.alignment="CENTER">
+
+        <content>
+            <VBox spacing="16.0"
+                  style="-fx-background-color: #F4F6FA;">
+
+                <padding>
+                    <Insets bottom="25.0" left="10.0"
+                            right="10.0" top="15.0"/>
+                </padding>
+
+                <children>
+                    <Label text="Próximos eventos"
+                           style="-fx-font-size: 18px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #243B64;"/>
+
+                    <!-- Os cards serão adicionados pelo controller -->
+                    <VBox fx:id="listaEventos" spacing="12.0"/>
+
+                    <HBox alignment="CENTER">
+                        <children>
+                            <Button text="+ Criar evento"
+                                    onAction="#abrirFormularioEvento"
+                                    prefHeight="48.0"
+                                    prefWidth="350.0"
+                                    style="-fx-background-color: #426A9E;
+                                           -fx-text-fill: white;
+                                           -fx-font-size: 15px;
+                                           -fx-font-weight: bold;
+                                           -fx-background-radius: 12px;
+                                           -fx-cursor: hand;"/>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+        </content>
+    </ScrollPane>
+</center>
+
+    <!-- NAVEGAÇÃO INFERIOR -->
+    
+<bottom>
+    <HBox alignment="CENTER" minHeight="100.0" minWidth="390.0" prefHeight="100.0" prefWidth="390.0" spacing="20.0" style="-fx-background-color: white;                  -fx-border-width: 1px;                  -fx-background-radius: 12px;" BorderPane.alignment="CENTER">
+
+        <children>
+
+            <VBox fx:id="navInicio" alignment="CENTER" onMouseClicked="#abrirInicio" prefHeight="55.0" prefWidth="75.0" spacing="5.0">
+                <children>
+                    <Label style="-fx-font-size: 12px;                                   -fx-text-fill: #667085;" text="🏠 Início" />
+                </children>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+                <padding>
+                    <Insets bottom="35.0" />
+                </padding>
+            </VBox>
+
+            <VBox fx:id="navEventos" alignment="CENTER" onMouseClicked="#abrirEventos" prefHeight="55.0" prefWidth="75.0" spacing="5.0">
+                <children>
+                    <Label style="-fx-font-size: 12px;                                   -fx-text-fill: #243B64;                                   -fx-font-weight: bold;" text="📅 Eventos" />
+                </children>
+                <padding>
+                    <Insets bottom="35.0" />
+                </padding>
+            </VBox>
+
+            <VBox fx:id="navGrupos" alignment="CENTER" onMouseClicked="#abrirGrupos" prefHeight="55.0" prefWidth="75.0" spacing="5.0">
+                <children>
+                    <Label style="-fx-font-size: 12px;                                   -fx-text-fill: #667085;" text="👥 Grupos" />
+                </children>
+                <padding>
+                    <Insets bottom="35.0" />
+                </padding>
+            </VBox>
+
+            <VBox fx:id="navPerfil" alignment="CENTER" onMouseClicked="#abrirPerfil" prefHeight="55.0" prefWidth="75.0" spacing="5.0">
+                <children>
+                    <Label style="-fx-font-size: 12px;                                   -fx-text-fill: #667085;" text="👤 Perfil" />
+                </children>
+                <padding>
+                    <Insets bottom="35.0" />
+                </padding>
+            </VBox>
+
+        </children>
+    </HBox>
+</bottom>
+
+</BorderPane>

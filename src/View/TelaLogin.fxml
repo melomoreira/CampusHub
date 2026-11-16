@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="844.0" prefWidth="390.0" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaLoginController">
+
+    <center>
+        <VBox alignment="CENTER" maxWidth="320.0" spacing="22.0">
+
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" />
+    </padding>
+         <ImageView fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../imagens/CampusHub_Logo+Nome.png"/>
+            </image>
+         </ImageView>
+
+            <VBox spacing="7.0">
+                <Label style="-fx-font-size: 25px;                               -fx-font-weight: bold;                               -fx-text-fill: #243B64;" text="Bem-vindo de volta!" />
+
+                <Label style="-fx-font-size: 13px;                               -fx-text-fill: #667085;" text="Entre para continuar sua jornada." />
+            </VBox>
+
+            <VBox spacing="8.0">
+                <Label style="-fx-text-fill: #243B64;                               -fx-font-weight: bold;" text="E-mail" />
+
+                <TextField fx:id="campoEmail" prefHeight="45.0" promptText="seuemail@universidade.com" style="-fx-background-radius: 8px;" />
+            </VBox>
+
+            <VBox spacing="8.0">
+                <Label style="-fx-text-fill: #243B64;                               -fx-font-weight: bold;" text="Senha" />
+
+                <PasswordField fx:id="campoSenha" prefHeight="45.0" promptText="Digite sua senha" style="-fx-background-radius: 8px;" />
+            </VBox>
+
+            <Label fx:id="mensagemErro" style="-fx-text-fill: #D64545;                           -fx-font-size: 12px;" text="" wrapText="true" />
+
+            <Button maxWidth="Infinity" onAction="#realizarLogin" prefHeight="48.0" style="-fx-background-color: #243B64;                            -fx-text-fill: white;                            -fx-font-size: 15px;                            -fx-font-weight: bold;                            -fx-background-radius: 8px;                            -fx-cursor: hand;" text="Entrar" />
+
+            <HBox alignment="CENTER" spacing="5.0">
+                <Label style="-fx-text-fill: #667085;                               -fx-font-size: 12px;" text="Ainda não tem uma conta?" />
+
+                <Hyperlink onAction="#abrirCadastro" style="-fx-text-fill: #426A9E;                                   -fx-font-weight: bold;" text="Cadastre-se" />
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
