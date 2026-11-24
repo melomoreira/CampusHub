@@ -20,6 +20,8 @@ Atualmente, essas informações costumam estar distribuídas entre diferentes pl
 
 Seu público-alvo principal são estudantes universitários, com possibilidade de expansão futura para outros integrantes da comunidade acadêmica.
 
+---
+
 ## Objetivos
 
 - Centralizar informações e recursos relacionados à vida universitária.
